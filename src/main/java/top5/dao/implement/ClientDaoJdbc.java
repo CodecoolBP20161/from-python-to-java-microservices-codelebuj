@@ -15,7 +15,6 @@ public class ClientDaoJdbc extends ConnectionDB {
     }
 
 
-
     @Override
     public Connection getConnection() throws SQLException {
         return super.getConnection();
@@ -25,8 +24,6 @@ public class ClientDaoJdbc extends ConnectionDB {
     public void executeQuery(String query) {
         super.executeQuery(query);
     }
-
-
 
 
     public void addClient(Client client) {

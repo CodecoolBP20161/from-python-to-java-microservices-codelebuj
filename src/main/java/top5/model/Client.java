@@ -8,7 +8,6 @@ public class Client {
     public Client (String clientKey, String clientName){
         this.clientKey = clientKey;
         this.clientName = clientName;
-
     }
 
     public String getClientKey() {
@@ -21,9 +20,5 @@ public class Client {
 
     public String getClientName() {
         return clientName;
-    }
-
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
     }
 }
