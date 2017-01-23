@@ -32,7 +32,8 @@ public class PaidProductDaoJdbc extends ConnectionDB {
 
     public void addPaidProducts(PaidProducts paidProduct){
         String query = "INSERT INTO paid_products (product_id, quantity, purchase_time, client_id)" +
-                "VALUES (" + paidProduct.getProductID() + "," + paidProduct.getQuantity() + ",'" + paidProduct.getPurchaseTime() +"','"+ paidProduct.getClientKey()+"');";
+                "VALUES (" + paidProduct.getProductID() + "," + paidProduct.getQuantity() + ",'" + paidProduct.getPurchaseTime() +"',(SELECT client_id from client WHERE client_identifier='"+ paidProduct.getClientKey()+"'));";
+        System.out.println(query);
         executeQuery(query);
     }
 
