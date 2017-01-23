@@ -2,7 +2,6 @@ package top5;
 
 import top5.dao.implement.ClientDaoJdbc;
 import top5.model.Client;
-
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -12,7 +11,6 @@ import java.util.Scanner;
 
 public class APIKey {
 
-
     public static void main(String[] args) throws NoSuchAlgorithmException {
         Date date = new Date();
         String dateString = date.toString();
@@ -20,12 +18,11 @@ public class APIKey {
         String clientKey = apiKey.getMD5(dateString);
         System.out.println("Please write your brand name: ");
         Scanner sc = new Scanner(System.in);
-        String i = sc.next();
-        Client newClient = new Client(clientKey, i);
+        String clientName = sc.next();
+        Client newClient = new Client(clientKey, clientName);
         ClientDaoJdbc saveClient = new ClientDaoJdbc();
         saveClient.addClient(newClient);
         System.out.println("Your API key is : " + clientKey);
-
     }
 
 
