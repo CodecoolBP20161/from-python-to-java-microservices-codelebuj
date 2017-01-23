@@ -23,7 +23,6 @@ public class ConnectionDB {
                 DATABASE,
                 DB_USER,
                 DB_PASSWORD);
-
     }
 
     public void executeQuery(String query) {
@@ -31,10 +30,8 @@ public class ConnectionDB {
              Statement statement = connection.createStatement()
         ) {
             statement.execute(query);
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
 }
