@@ -31,7 +31,7 @@ public class Top5APIController {
         JSONArray jsonArray = new JSONArray(request.body());
         if (!clientDao.findClient(request.params(":apikey")).equals(null)) {
             for (int i = 0; i < jsonArray.length(); i++) {
-                paidProductDao.addPaidProducts((new PaidProducts(jsonArray.getJSONObject(i).getInt("productID"), jsonArray.getJSONObject(i).getInt("quantity"), date, request.params(":apikey"))));
+                paidProductDao.addPaidProducts((new PaidProducts(jsonArray.getJSONObject(i).getInt("id"), jsonArray.getJSONObject(i).getInt("quantity"), date, request.params(":apikey"))));
             }
         }
 /*        Gson gson = new Gson();
